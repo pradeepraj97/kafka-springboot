@@ -1,0 +1,55 @@
+plugins {
+	id 'java'
+	id 'war'
+	id 'org.springframework.boot' version '3.3.2'
+	id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.test'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+
+
+	implementation 'org.springframework.kafka:spring-kafka'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-freemarker'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'io.jsonwebtoken:jjwt:0.12.5'
+	implementation 'org.jetbrains:annotations:24.1.0'
+	implementation 'org.apache.poi:poi:5.2.5'
+	implementation 'org.apache.poi:poi-ooxml:5.2.5'
+	implementation 'jakarta.mail:jakarta.mail-api:2.1.2'
+	implementation 'com.sun.mail:imap:2.0.1'
+	implementation 'com.sun.mail:dsn:2.0.1'
+	implementation 'jakarta.activation:jakarta.activation-api:2.1.2' 
+	implementation 'org.apache.tika:tika-core:2.9.1'
+	implementation 'org.codehaus.jettison:jettison:1.5.4'
+	implementation 'org.bouncycastle:bcprov-jdk18on:1.77'
+	implementation 'org.freemarker:freemarker:2.3.32'
+	implementation 'org.json:json:20220320'
+	implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.2'
+	implementation 'org.apache.commons:commons-lang3:3.14.0'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	annotationProcessor 'org.projectlombok:lombok'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
